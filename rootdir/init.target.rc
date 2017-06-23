@@ -225,3 +225,7 @@ on property:vendor.camera.backup.cali=1
     chmod 0644 /mnt/vendor/persist/camera/dual_calibration/dualCaliParams_wu.bin
     copy /mnt/vendor/persist/camera/dual_calibration/dualCaliParams_wu.bin /vendor/etc/dualCaliParams_wu_backup.bin
     setprop vendor.camera.cali.backup.state 1
+
+on property:sys.boot_completed=1
+    # Enable ZRAM on boot_complete
+    swapon_all /vendor/etc/fstab.qcom
