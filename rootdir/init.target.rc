@@ -105,6 +105,8 @@ on post-fs-data
     chown system system /sys/bus/platform/drivers/HardwareInfo/HardwareInfo/alsps
     chown system system /sys/bus/platform/drivers/HardwareInfo/HardwareInfo/gyro
     chown system system /sys/bus/platform/drivers/HardwareInfo/HardwareInfo/hall
+    # Enable WLAN cold boot calibration
+    write /sys/devices/platform/soc/b0000000.qcom,cnss-qca6490/fs_ready 1
 
 on early-boot
     start vendor.sensors
