@@ -54,6 +54,7 @@ PRODUCT_PACKAGES += \
     SonyPDX225FrameworksRes \
     SonyPDX225SystemUIRes \
     SonyMurrayFrameworksResCommon \
+    SonyMurrayProductFrameworks \
     SonyMurraySettingsProviderOverlayCommon \
     SonyMurraySettingsResCommon \
     SonyMurraySystemUIResCommon \
