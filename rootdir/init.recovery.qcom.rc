@@ -10,7 +10,7 @@ on init
 
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
-    write /sys/class/udc/${ro.boot.usbcontroller}/device/../mode peripheral
+    write /sys/bus/platform/devices/${ro.boot.usb.dwc3_msm:-4e00000.ssusb}/mode peripheral
 
 on boot
     write /sys/devices/virtual/sec/tsp/after_work 1
