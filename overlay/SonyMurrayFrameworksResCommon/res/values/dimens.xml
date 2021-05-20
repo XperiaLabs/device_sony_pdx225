@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 XperiaLabs Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+
+<resources>
+    <!-- Recents Corners Radius -->
+    <dimen name="rounded_corner_radius">7dp</dimen>
+    <dimen name="rounded_corner_radius_bottom">7dp</dimen>
+    <dimen name="rounded_corner_radius_top">7dp</dimen>
+</resources>
