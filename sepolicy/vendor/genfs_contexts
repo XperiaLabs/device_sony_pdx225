@@ -374,3 +374,7 @@ genfscon sysfs /devices/virtual/wakeup/wakeup40/wakeup_count u:object_r:sysfs_wa
 genfscon sysfs /devices/virtual/wakeup/wakeup41/wakeup_count u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/wakeup/wakeup46/wakeup_count u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/wakeup/wakeup47/wakeup_count u:object_r:sysfs_wakeup:s0
+
+# KProfiles
+genfscon sysfs /module/kprofiles/parameters/auto_kprofiles u:object_r:sysfs_kprofiles:s0
+genfscon sysfs /module/kprofiles/parameters/kp_mode u:object_r:sysfs_kprofiles:s0
