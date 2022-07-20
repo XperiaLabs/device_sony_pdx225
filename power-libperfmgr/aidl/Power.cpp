@@ -67,6 +67,8 @@ int open_ts_input() {
 }
 }  // anonymous namespace
 
+#define KPROFILES_NODE "/sys/module/kprofiles/parameters/kp_mode"
+
 namespace aidl {
 namespace google {
 namespace hardware {
@@ -79,6 +81,7 @@ static constexpr int kInputEventWakeupModeOn = 5;
 
 using ::aidl::google::hardware::power::impl::pixel::PowerHintSession;
 using ::android::perfmgr::HintManager;
+using ::android::base::WriteStringToFile;
 
 constexpr char kPowerHalStateProp[] = "vendor.powerhal.state";
 constexpr char kPowerHalAudioProp[] = "vendor.powerhal.audio";
@@ -164,6 +167,9 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
                 HintManager::GetInstance()->EndHint(toString(type));
             }
             mBatterySaverOn = enabled;
+            break;
+        case Mode::LOW_POWER:
+            WriteStringToFile(enabled ? "1" : "0", KPROFILES_NODE, true);
             break;
         case Mode::SUSTAINED_PERFORMANCE:
             if (enabled) {
