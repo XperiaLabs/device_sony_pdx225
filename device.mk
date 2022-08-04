@@ -147,6 +147,11 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-3.9.1-vendorcompat
 
 # Audio
+SOONG_CONFIG_NAMESPACES += android_hardware_audio
+SOONG_CONFIG_android_hardware_audio += \
+    run_64bit
+SOONG_CONFIG_android_hardware_audio_run_64bit := true
+
 PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
