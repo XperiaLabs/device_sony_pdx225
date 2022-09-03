@@ -61,6 +61,10 @@ function blob_fixup() {
     vendor/lib64/libssc.so | vendor/lib64/libsnsapi.so | vendor/lib64/libsensorcal.so | vendor/lib64/libsnsdiaglog.so | vendor/lib64/sensors.ssc.so | vendor/bin/sensors.qti | vendor/lib64/libwvhidl.so | vendor/lib/libssc.so )
         "${PATCHELF} --replace-needed "libprotobuf-cpp-lite-3.9.1.so" "libprotobuf-cpp-full-3.9.1.so" "${2}"
         ;;
+        vendor/lib64/vendor.egistec.hardware.biometrics.fingerprint@4.0.so)
+            "${PATCHELF_0_8}" --remove-needed "libhidlbase.so" "${2}"
+            --add-needed "libhidlbase-v32.so" "${2}"
+            ;;
     esac
 }
 
