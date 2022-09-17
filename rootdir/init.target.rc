@@ -42,6 +42,10 @@ on early-init
     wait /sys/devices/soc0/soc_id
 #modify by zhouchenghua for baseline upgrade at 2022/7/6 end
 
+on early-init
+    # Start audio adsp rpc daemon at early init stage
+    start vendor.audioadsprpcd_audiopd
+
 on init
     # Scheduler uclamp
     mkdir /dev/cpuctl/foreground
