@@ -5,7 +5,7 @@ cc_binary {
     vintf_fragments: ["aidl/android.hardware.power-service.sony.xml"],
     vendor: true,
     shared_libs: [
-        "android.hardware.power-V3-ndk",
+        "android.hardware.power-V4-ndk",
         "libbase",
         "libcutils",
         "liblog",
