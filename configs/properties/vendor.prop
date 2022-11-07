@@ -255,3 +255,10 @@ wifi.aware.interface=wifi-aware0
 # Zygote
 zygote.critical_window.minute=10
 
+# Supressing logs
+persist.log.tag.BoundBrokerSvc=S
+persist.log.tag.GoogleInputMethodService=S
+persist.log.tag.QC-time-services=S
+persist.log.tag.Tethering=S
+persist.log.tag.WindowManager=S
+persist.log.tag.ziparchive=S
