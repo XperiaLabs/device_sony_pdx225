@@ -258,6 +258,10 @@ persist.vendor.sensors.allow_non_default_discovery=true
 # shutdown
 sys.vendor.shutdown.waittime=500
 
+# SurfaceFlinger
+ro.surface_flinger.set_display_power_timer_ms=1000
+ro.surface_flinger.set_idle_timer_ms=80
+
 # USB
 vendor.usb.diag.func.name=ffs
 vendor.usb.dpl.inst.name=dpl
