@@ -84,6 +84,13 @@ constexpr char kPowerHalStateProp[] = "vendor.powerhal.state";
 constexpr char kPowerHalAudioProp[] = "vendor.powerhal.audio";
 constexpr char kPowerHalRenderingProp[] = "vendor.powerhal.rendering";
 
+static const std::vector<Mode> kAlwaysAllowedModes = {
+    Mode::DOUBLE_TAP_TO_WAKE,
+    Mode::INTERACTIVE,
+    Mode::DEVICE_IDLE,
+    Mode::DISPLAY_INACTIVE,
+};
+
 Power::Power(std::shared_ptr<DisplayLowPower> dlpw, std::shared_ptr<AdaptiveCpu> adaptiveCpu)
     : mDisplayLowPower(dlpw),
       mAdaptiveCpu(adaptiveCpu),
@@ -118,6 +125,10 @@ Power::Power(std::shared_ptr<DisplayLowPower> dlpw, std::shared_ptr<AdaptiveCpu>
 static void endAllHints() {
     std::shared_ptr<HintManager> hm = HintManager::GetInstance();
     for (auto hint : hm->GetHints()) {
+        if (std::any_of(kAlwaysAllowedModes.begin(), kAlwaysAllowedModes.end(),
+                [hint](auto mode) { return hint == toString(mode); })) {
+            continue;
+        }
         hm->EndHint(hint);
     }
 }
@@ -180,7 +191,10 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
         case Mode::GAME_LOADING:
             [[fallthrough]];
         default:
-            if (mBatterySaverOn) break;
+            if (mBatterySaverOn && std::find(kAlwaysAllowedModes.begin(),
+                    kAlwaysAllowedModes.end(), type) == kAlwaysAllowedModes.end()) {
+                break;
+            }
             if (enabled) {
                 HintManager::GetInstance()->DoHint(toString(type));
             } else {
