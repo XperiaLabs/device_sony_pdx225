@@ -60,7 +60,8 @@ PRODUCT_PACKAGES += \
     SonyMurraySettingsResCommon \
     SonyMurraySystemUIResCommon \
     SonyMurrayTelephonyResCommon \
-    WifiResCommon
+    WifiResCommon \
+    NfcResTarget
 
 # Permissions
 PRODUCT_COPY_FILES += \
