@@ -6,7 +6,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter pdx214 pdx215,$(TARGET_DEVICE)),)
+ifneq ($(filter pdx225,$(TARGET_DEVICE)),)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
@@ -198,9 +198,8 @@ $(WIFI_FIRMWARE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Creating wifi firmware symlinks: $@"
 	@mkdir -p $@/wlan/qca_cld
 	$(hide) ln -sf /vendor/etc/wifi/regdb.bin $@/regdb.bin
-	$(hide) ln -sf /vendor/etc/wifi/bdwlan.e47 $@/bdwlan.e47
-	$(hide) ln -sf /vendor/etc/wifi/bdwlan.e48 $@/bdwlan.e48
-	$(hide) ln -sf /vendor/etc/wifi/bdwlan.elf $@/bdwlan.elf
+	$(hide) ln -sf /vendor/etc/wifi/bdwlan.bin $@/bdwlan.bin
+	$(hide) ln -sf /vendor/etc/wifi/bdwlanu.bin $@/bdwlanu.bin
 	$(hide) ln -sf /data/vendor/firmware/wlanmdsp.mbn $@/wlanmdsp.otaupdate
 	$(hide) ln -sf /mnt/vendor/persist/wlan_mac.bin $@/wlan/qca_cld/wlan_mac.bin
 	$(hide) ln -sf /vendor/etc/wifi/WCNSS_qcom_cfg.ini $@/wlan/qca_cld/WCNSS_qcom_cfg.ini
@@ -220,5 +219,49 @@ ALL_DEFAULT_INSTALLED_MODULES += \
     $(RFS_MSM_SLPI_SYMLINKS) \
     $(RFS_MSM_WPSS_SYMLINKS) \
     $(WIFI_FIRMWARE_SYMLINKS)
+
+EGL_32_SYMLINK := $(TARGET_OUT_VENDOR)/lib/libEGL_adreno.so
+$(EGL_32_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating 32-bit EGL symlink: $@"
+	@mkdir -p $(dir $@)
+	$(hide) ln -sf egl/$(notdir $@) $@
+
+GLESv2_32_SYMLINK := $(TARGET_OUT_VENDOR)/lib/libGLESv2_adreno.so
+$(GLESv2_32_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating 32-bit GLESv2 symlink: $@"
+	@mkdir -p $(dir $@)
+	$(hide) ln -sf egl/$(notdir $@) $@
+
+Q3DTOOLS_32_SYMLINK := $(TARGET_OUT_VENDOR)/lib/libq3dtools_adreno.so
+$(Q3DTOOLS_32_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating 32-bit Q3D Tools symlink: $@"
+	@mkdir -p $(dir $@)
+	$(hide) ln -sf egl/$(notdir $@) $@
+
+EGL_64_SYMLINK := $(TARGET_OUT_VENDOR)/lib64/libEGL_adreno.so
+$(EGL_64_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating 64-bit EGL symlink: $@"
+	@mkdir -p $(dir $@)
+	$(hide) ln -sf egl/$(notdir $@) $@
+
+GLESv2_64_SYMLINK := $(TARGET_OUT_VENDOR)/lib64/libGLESv2_adreno.so
+$(GLESv2_64_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating 64-bit GLESv2 symlink: $@"
+	@mkdir -p $(dir $@)
+	$(hide) ln -sf egl/$(notdir $@) $@
+
+Q3DTOOLS_64_SYMLINK := $(TARGET_OUT_VENDOR)/lib64/libq3dtools_adreno.so
+$(Q3DTOOLS_64_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating 64-bit Q3DTools symlink: $@"
+	@mkdir -p $(dir $@)
+	$(hide) ln -sf egl/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += \
+	$(EGL_32_SYMLINK) \
+	$(GLESv2_32_SYMLINK) \
+	$(Q3DTOOLS_32_SYMLINK) \
+	$(EGL_64_SYMLINK) \
+	$(GLESv2_64_SYMLINK) \
+	$(Q3DTOOLS_64_SYMLINK)
 
 endif

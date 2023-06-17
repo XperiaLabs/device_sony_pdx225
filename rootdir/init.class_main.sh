@@ -35,6 +35,8 @@ sgltecsfb=`getprop persist.vendor.radio.sglte_csfb`
 datamode=`getprop persist.vendor.data.mode`
 low_ram=`getprop ro.config.low_ram`
 qcrild_status=true
+pcbid=`cat /sys/bus/platform/drivers/HardwareInfo/HardwareInfo/modem_id`
+echo "pcbid is : $pcbid"
 
 case "$baseband" in
     "apq" | "sda" | "qcs" )

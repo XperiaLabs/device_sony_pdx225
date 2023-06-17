@@ -322,8 +322,7 @@
     <hal format="hidl">
         <name>vendor.semc.hardware.display</name>
         <transport>hwbinder</transport>
-        <fqname>@2.4::IDisplay/default</fqname>
-        <fqname>@2.4::IFramerateController/default</fqname>
+        <fqname>@2.2::IDisplay/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.tetheroffload.config</name>
@@ -396,11 +395,6 @@
         <fqname>@2.0::INxpNfc/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.somc.hardware.swiqi</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IHidlSwiqi/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.biometrics.fingerprint</name>
         <transport>hwbinder</transport>
         <version>2.1</version>
@@ -428,11 +422,20 @@
     <hal override="true">
         <name>android.hardware.camera.provider</name>
         <transport>hwbinder</transport>
-        <version>2.6</version>
+        <version>2.4</version>
         <interface>
             <name>ICameraProvider</name>
             <instance>internal/0</instance>
             <instance>external/0</instance>
+        </interface>
+    </hal>
+        <hal override="true">
+        <name>android.hardware.camera.provider</name>
+        <transport>hwbinder</transport>
+        <version>2.6</version>
+        <interface>
+            <name>ICameraProvider</name>
+            <instance>legacy/0</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -477,4 +480,5 @@
         <name>vendor.semc.hardware.extlight</name>
         <fqname>IExtLight/default</fqname>
     </hal>
+    <kernel target-level="5"/>
 </manifest>

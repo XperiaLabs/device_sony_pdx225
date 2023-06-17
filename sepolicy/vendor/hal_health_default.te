@@ -1,2 +1,2 @@
-allow hal_health_default sysfs_wireless_supply:dir search;
-allow hal_health_default sysfs_wireless_supply:file { read getattr open };
+allow hal_health_default sysfs:file getattr;
+allow hal_health_default sysfs:file r_file_perms;

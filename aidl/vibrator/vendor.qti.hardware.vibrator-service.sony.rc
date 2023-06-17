@@ -1,0 +1,48 @@
+service vendor.qti.vibrator /vendor/bin/hw/vendor.qti.hardware.vibrator-service.sony
+    class hal
+    user system
+    group system input
+
+on init
+	chmod 0664  /sys/class/leds/awinic_vibrator/activate
+	chmod 0664  /sys/class/leds/awinic_vibrator/duration
+	chmod 0664  /sys/class/leds/awinic_vibrator/state
+	chmod 0664  /sys/class/leds/awinic_vibrator/f0
+	chmod 0664  /sys/class/leds/awinic_vibrator/cali
+	chmod 0664  /sys/class/leds/awinic_vibrator/gain
+	chmod 0664  /sys/class/leds/awinic_vibrator/brightness
+
+	chown system system /sys/class/leds/awinic_vibrator/activate
+	chown system system /sys/class/leds/awinic_vibrator/duration
+	chown system system /sys/class/leds/awinic_vibrator/state
+	chown system system /sys/class/leds/awinic_vibrator/f0
+	chown system system /sys/class/leds/awinic_vibrator/cali
+	chown system system /sys/class/leds/awinic_vibrator/gain
+	chown system system /sys/class/leds/awinic_vibrator/brightness
+
+	chmod 0664  /sys/class/leds/drv26xx_haptic/activate
+	chmod 0664  /sys/class/leds/drv26xx_haptic/duration
+	chmod 0664  /sys/class/leds/drv26xx_haptic/state
+	chmod 0664  /sys/class/leds/drv26xx_haptic/brightness
+	chmod 0664  /sys/class/leds/drv26xx_haptic/CalBemf
+	chmod 0664  /sys/class/leds/drv26xx_haptic/CalComp
+	chmod 0664  /sys/class/leds/drv26xx_haptic/calib
+	chmod 0664  /sys/class/leds/drv26xx_haptic/CalGain
+	chmod 0664  /sys/class/leds/drv26xx_haptic/f0_msb
+	chmod 0664  /sys/class/leds/drv26xx_haptic/f0_lsb
+	chmod 0664  /sys/class/leds/drv26xx_haptic/gain
+
+	chown system system /sys/class/leds/drv26xx_haptic/activate
+	chown system system /sys/class/leds/drv26xx_haptic/duration
+	chown system system /sys/class/leds/drv26xx_haptic/state
+	chown system system /sys/class/leds/drv26xx_haptic/brightness
+	chown system system /sys/class/leds/drv26xx_haptic/CalBemf
+	chown system system /sys/class/leds/drv26xx_haptic/CalComp
+	chown system system /sys/class/leds/drv26xx_haptic/calib
+	chown system system /sys/class/leds/drv26xx_haptic/CalGain
+	chown system system /sys/class/leds/drv26xx_haptic/f0_msb
+	chown system system /sys/class/leds/drv26xx_haptic/f0_lsb
+	chown system system /sys/class/leds/drv26xx_haptic/gain
+
+on late-init
+    write /sys/class/leds/awinic_vibrator/trigger "transient"

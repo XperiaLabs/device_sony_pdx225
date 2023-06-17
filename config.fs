@@ -25,6 +25,9 @@ value:2908
 [AID_VENDOR_QTR]
 value:2909
 
+[AID_VENDOR_ILLUMINATION]
+value:2929
+
 [AID_VENDOR_IDD]
 value:2987
 

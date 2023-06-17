@@ -9,91 +9,64 @@ service msim_sh /odm/bin/init.qcom.msim.sh
     group root
     oneshot
 
-on boot
-    # Enable smart charging
-    write /sys/class/battchg_ext/smart_charging_activation 1
-
 on post-fs
     # radio
     exec_start msim_sh
     setprop persist.radio.multisim.config ${vendor.radio.multisim.config}
     setprop ro.vendor.ltalabel.model ${vendor.radio.ltalabel.model}
 
-on property:ro.vendor.ltalabel.model=XQ-BC72
-    setprop ro.vendor.product.rf.id PDX215-C2
-
-on property:ro.vendor.ltalabel.model=XQ-BC62
-    setprop ro.vendor.product.rf.id PDX215-A2US
-
-on property:ro.vendor.ltalabel.model=XQ-BC52
-    setprop ro.vendor.product.rf.id PDX215-A2
-
-on property:ro.vendor.ltalabel.model=XQ-BC42
-    setprop ro.vendor.product.rf.id PDX215-J2
-    setprop persist.vendor.nfc.config_file_name "libnfc-nxp-typef.conf"
-
-on property:ro.vendor.ltalabel.model=XQ-BQ72
-    setprop ro.vendor.product.rf.id PDX214-C2
-
-on property:ro.vendor.ltalabel.model=XQ-BQ62
-    setprop ro.vendor.product.rf.id PDX214-A2US
-
-on property:ro.vendor.ltalabel.model=XQ-BQ52
-    setprop ro.vendor.product.rf.id PDX214-A2
-
-on property:ro.vendor.ltalabel.model=XQ-BQ42
-    setprop ro.vendor.product.rf.id PDX214-J2
+on property:ro.vendor.ltalabel.model=XQ-CC44
     setprop persist.vendor.nfc.config_file_name "libnfc-nxp-typef.conf"
 
 # USB config, refer to init.sony.usb.rc
 on property:sys.usb.config=adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x0FCE
-    write /config/usb_gadget/g1/idProduct 0x320D
+    write /config/usb_gadget/g1/idProduct 0x320C
 
 on property:sys.usb.config=mass_storage && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x0FCE
-    write /config/usb_gadget/g1/idProduct 0x020D
+    write /config/usb_gadget/g1/idProduct 0x020C
 
 on property:sys.usb.config=mtp && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x0FCE
-    write /config/usb_gadget/g1/idProduct 0x020D
+    write /config/usb_gadget/g1/idProduct 0x020C
 
 on property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x0FCE
-    write /config/usb_gadget/g1/idProduct 0x520D
+    write /config/usb_gadget/g1/idProduct 0x520C
 
 on property:sys.usb.config=ptp && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x0FCE
-    write /config/usb_gadget/g1/idProduct 0xA20D
+    write /config/usb_gadget/g1/idProduct 0xA20C
 
 on property:sys.usb.config=ptp,adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x0FCE
-    write /config/usb_gadget/g1/idProduct 0xB20D
+    write /config/usb_gadget/g1/idProduct 0xB20C
 
 on property:sys.usb.config=rndis,none && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x0FCE
-    write /config/usb_gadget/g1/idProduct 0x720D
+    write /config/usb_gadget/g1/idProduct 0x720C
 
 on property:sys.usb.config=rndis,serial_cdev,diag && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x0FCE
-    write /config/usb_gadget/g1/idProduct 0x020D
+    write /config/usb_gadget/g1/idProduct 0x020C
 
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=diag,adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x0FCE
-    write /config/usb_gadget/g1/idProduct 0x020D
+    write /config/usb_gadget/g1/idProduct 0x020C
 
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=diag,diag_mdm,adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x0FCE
-    write /config/usb_gadget/g1/idProduct 0x020D
+    write /config/usb_gadget/g1/idProduct 0x020C
 
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mass_storage,adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x0FCE
-    write /config/usb_gadget/g1/idProduct 0x520D
+    write /config/usb_gadget/g1/idProduct 0x520C
 
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=rndis,diag,adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x0FCE
-    write /config/usb_gadget/g1/idProduct 0x020D
+    write /config/usb_gadget/g1/idProduct 0x020C
 
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=rndis,none,adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x0FCE
-    write /config/usb_gadget/g1/idProduct 0x020D
+    write /config/usb_gadget/g1/idProduct 0x020C

@@ -1,5 +1,5 @@
 # Copyright (c) 2012-2015, 2017-2020, The Linux Foundation. All rights reserved.
-# Copyright (C) 2020 Sony Mobile Communications Inc
+# Copyright 2021 Sony Corporation
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -25,8 +25,8 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# NOTE: This file has been modified by Sony Mobile Communications Inc.
-# Modifications are licensed under the Sony Mobile Communications Inc's
+# NOTE: This file has been modified by Sony Corporation
+# Modifications are licensed under the  Sony Corporation's
 # End User License Agreement ("EULA"). Any use of the modifications is subject
 # to the terms of the EULA
 
@@ -349,6 +349,9 @@ firmware_directories /vendor/firmware_mnt/image/
 # tzdbg
 /dev/tzdbg_*              0440   root       root
 
+# wlan crash reason
+/dev/wlan_pdr_*           0440   root       root
+
 # Fingerprint device
 /dev/qbt*                 0660   system     system
 /sys/class/fts/touch_aoi aoi_set 0660 root system
@@ -373,7 +376,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/block/platform/soc/8804000.sdhci/by-name/frp       0600   system     system
 
 # Add TA block device permission
-/dev/block/platform/soc/1d84000.ufshc/by-name/TA        0660   oem_2997   oem_2997
+/dev/block/platform/soc/4804000.ufshc/by-name/TA        0660   oem_2997   oem_2997
 
 # Kmsg device
 /dev/kmsg                                               0620   root       system
@@ -502,6 +505,3 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_raw                     0664    system  system
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_scale                   0664    system  system
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_scale_available         0664    system  system
-
-# Fingerprint sensor device
-/dev/esfp0 0660 system system

@@ -1,4 +1,12 @@
 <compatibility-matrix version="2.0" type="framework">
+    <hal format="aidl" optional="true">
+        <name>android.hardware.vibrator</name>
+        <version>2</version>
+        <interface>
+            <name>IVibrator</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl" optional="true">
         <name>vendor.nxp.nxpnfc</name>
         <version>2.0</version>
@@ -39,10 +47,6 @@
             <name>IDisplay</name>
             <instance>default</instance>
         </interface>
-       <interface>
-            <name>IFramerateController</name>
-            <instance>default</instance>
-        </interface>
     </hal>
     <hal format="hidl">
        <name>vendor.somc.hardware.radio</name>
@@ -58,14 +62,6 @@
        <version>1.0</version>
        <interface>
             <name>IMisctaGlobal</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.somc.hardware.swiqi</name>
-        <version>1.0</version>
-        <interface>
-            <name>IHidlSwiqi</name>
             <instance>default</instance>
         </interface>
     </hal>

@@ -1,0 +1,2 @@
+allow vendor_modprobe vendor_sysfs_battery_supply:dir search;
+allow vendor_modprobe vendor_sysfs_battery_supply:file { read write open map };

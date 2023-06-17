@@ -1,7 +1,7 @@
 # Audio
 ro.vendor.qti.va_odm.support=1
 
-persist.vendor.display.pcc_matrix=0.000000,0.000000,0.000000,0.000000,0.117647,0.235294
+persist.vendor.display.pcc_matrix=0.156863,0.196078,0.000000,0.000000,0.039216,0.176471
 
 persist.vendor.colorgamut.mode=1
 persist.vendor.display.colorgamut.mode=1
