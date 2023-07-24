@@ -915,6 +915,10 @@ vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libssd.so
 vendor/lib64/libtzdrmgenprov.so
 
+# eUICC
+product/priv-app/EuiccGoogle/EuiccGoogle.apk;PRESIGNED
+system_ext/priv-app/EuiccMemoryReset/EuiccMemoryReset.apk;PRESIGNED
+
 # EVA Firmware
 vendor/firmware/evass-lt.b00
 vendor/firmware/evass-lt.b01
