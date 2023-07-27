@@ -439,6 +439,11 @@ PRODUCT_PACKAGES += \
     extphonelib \
     extphonelib.xml
 
+# RIL (eUICC)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/com.google.android.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.google.android.euicc.xml \
+    $(LOCAL_PATH)/configs/jp.co.sony.mc.euiccmemoryreset.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/jp.co.sony.mc.euiccmemoryreset.xml
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@2.0-service.multihal \
