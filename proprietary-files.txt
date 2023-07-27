@@ -1134,6 +1134,14 @@ vendor/lib64/vendor.qti.gnss@4.0-service.so
 vendor/lib64/vendor.qti.gnss@4.0.so
 vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so
 
+# Hardwareinfo calibration
+vendor/bin/init.hq.fsg.sh
+vendor/etc/fsg/A_fs_image.tar.gz.mbn.img
+vendor/etc/fsg/B_fs_image.tar.gz.mbn.img
+vendor/etc/fsg/C_fs_image.tar.gz.mbn.img
+vendor/etc/fsg/D_fs_image.tar.gz.mbn.img
+vendor/etc/fsg/E_fs_image.tar.gz.mbn.img
+
 # Haptics Firmware
 vendor/bin/aw882xx_cali_32
 vendor/firmware/aw8622x_haptic.bin
