@@ -1,4 +1,5 @@
 #
+# Copyright (C) 2021 Raphielscape LLC. and Haruka LLC.
 # Copyright (C) 2023 StatiXOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,3 +14,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+# Toggle glove_mode according to touch_sensitivity_mode
+on property:persist.vendor.touch_sensitivity_mode=0 && property:sys.boot_completed=1
+    write /sys/class/sec/tsp/cmd glove_mode,0
+
+on property:persist.vendor.touch_sensitivity_mode=1 && property:sys.boot_completed=1
+    write /sys/class/sec/tsp/cmd glove_mode,1
+
+# Route touch_sensitivity_mode to persist
+on property:debug.touch_sensitivity_mode=0
+    setprop persist.vendor.touch_sensitivity_mode 0
+
+on property:debug.touch_sensitivity_mode=1
+    setprop persist.vendor.touch_sensitivity_mode 1
