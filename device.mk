@@ -354,6 +354,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl
 
+# Init scripts
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/init.pdx225.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.pdx225.rc
+
 #  IPACM
 PRODUCT_PACKAGES += \
     ipacm \
