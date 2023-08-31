@@ -165,6 +165,7 @@ vendor.display.comp_mask=0
 vendor.display.enable_optimize_refresh=1
 vendor.display.disable_offline_rotator=1
 vendor.display.enable_async_powermode=0
+vendor.display.use_smooth_motion=1
 vendor.display.disable_hw_recovery_dump=1
 
 # DRM
