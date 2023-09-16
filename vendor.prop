@@ -138,6 +138,7 @@ ro.vendor.bt.bdaddr_path=/data/vendor/etc/bluetooth_bdaddr
 # Camera
 vendor.camera.enable.uvc=true
 vendor.mm.enable.qcom_parser=16777215
+persist.vendor.camera.logInfoMask=false
 
 # Chipset
 ro.soc.manufacturer=QTI

@@ -5,6 +5,7 @@ persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
 
 # Camera
 camera.disable_zsl_mode=true
+log.tag.CHIUSECASE=ERROR
 
 # Charger
 ro.charger.disable_init_blank=true
