@@ -471,6 +471,7 @@ PRODUCT_PACKAGES += \
 
 # Telephony
 PRODUCT_PACKAGES += \
+    SonyEuicc \
     ims-ext-common \
     ims_ext_common.xml \
     qti-telephony-hidl-wrapper \
