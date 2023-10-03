@@ -1,4 +1,4 @@
-# Stock package version: XQ-CC72_Customized SEA_65.1.A.5.50
+# Stock package version: XQ-CC72_Customized SEA_65.1.A.5.88
 
 # ACDB
 vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
