@@ -233,7 +233,6 @@ persist.vendor.radio.oem_socket=true
 persist.vendor.radio.enableadvancedscan=true
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ril.subscription.types=NV,RUIM
-ro.com.android.dataroaming=true
 
 # Sensors
 persist.vendor.sensors.sync_request=true
