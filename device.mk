@@ -439,7 +439,7 @@ PRODUCT_PACKAGES += \
 TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
 
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti \
+    android.hardware.power-service.sony-libperfmgr \
     android.hardware.power@1.3.vendor \
     libgrpc++_unsecure.vendor
 
@@ -459,6 +459,10 @@ PRODUCT_BOOT_JARS += \
     QPerformance \
     QXPerformance \
     UxPerformance
+
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/google/interfaces \
+    hardware/google/pixel
 
 # QMI
 PRODUCT_PACKAGES += \
