@@ -472,11 +472,6 @@
         <fqname>@2.2::IPerf/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.qti.hardware.servicetracker</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.2::IServicetracker/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.qti.hardware.pasrmanager</name>
         <transport>hwbinder</transport>
         <fqname>@1.1::IPasrManager/pasrhal</fqname>
