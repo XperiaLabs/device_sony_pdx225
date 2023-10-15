@@ -277,12 +277,6 @@
       <fqname>@1.1::IEsePowerManager/default</fqname>
     </hal>
     <hal format="hidl">
-      <name>android.hardware.drm</name>
-      <transport>hwbinder</transport>
-      <fqname>@1.3::IDrmFactory/widevine</fqname>
-      <fqname>@1.3::ICryptoFactory/widevine</fqname>
-    </hal>
-    <hal format="hidl">
       <name>vendor.semc.system.idd</name>
       <transport>hwbinder</transport>
       <fqname>@1.1::IIdd/default</fqname>
