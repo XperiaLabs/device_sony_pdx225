@@ -15,6 +15,7 @@
  */
 
 #define LOG_TAG "powerhal-libperfmgr"
+#define KPROFILES_NODE "/sys/module/kprofiles/parameters/kp_mode"
 
 #include "Power.h"
 
@@ -66,8 +67,6 @@ int open_ts_input() {
     return fd;
 }
 }  // anonymous namespace
-
-#define KPROFILES_NODE "/sys/module/kprofiles/parameters/kp_mode"
 
 namespace aidl {
 namespace google {
@@ -159,6 +158,7 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
             break;
         }
         case Mode::LOW_POWER:
+            WriteStringToFile(enabled ? "1" : "0", KPROFILES_NODE, true);
             mDisplayLowPower->SetDisplayLowPower(enabled);
             if (enabled) {
                 endAllHints();
@@ -167,9 +167,6 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
                 HintManager::GetInstance()->EndHint(toString(type));
             }
             mBatterySaverOn = enabled;
-            break;
-        case Mode::LOW_POWER:
-            WriteStringToFile(enabled ? "1" : "0", KPROFILES_NODE, true);
             break;
         case Mode::SUSTAINED_PERFORMANCE:
             if (enabled) {
