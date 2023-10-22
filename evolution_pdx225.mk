@@ -26,7 +26,6 @@ $(call inherit-product, vendor/evolution/config/common_full_phone.mk)
 
 IS_PHONE := true
 TARGET_USES_MINI_GAPPS := true
-TARGET_ENABLE_BLUR := true
 
 PRODUCT_NAME := evolution_pdx225
 PRODUCT_DEVICE := pdx225
