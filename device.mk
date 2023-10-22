@@ -585,7 +585,7 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
 
 # XperiaParts
-# PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     XperiaParts
 
 PRODUCT_BUILD_SUPER_PARTITION := false
