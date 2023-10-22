@@ -275,13 +275,6 @@ PRODUCT_PACKAGES += \
     init.sony-platform.rc \
     init.sony.rc
 
-# Dex to make OTA go faster
-PRODUCT_VENDOR_PROPERTIES += \
-    dalvik.vm.boot-dex2oat-cpu-set=1,2,3,4,5,6,7 \
-    dalvik.vm.boot-dex2oat-threads=7 \
-    dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
-    dalvik.vm.image-dex2oat-threads=8
-
 # Dex
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
 
