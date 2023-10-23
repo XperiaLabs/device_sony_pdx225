@@ -120,24 +120,23 @@
       "ResetOnInit": true
     },
     {
-      "Name": "GPUMaxFreq",
-      "Path": "/sys/class/kgsl/kgsl-3d0/devfreq/max_freq",
-      "Values": [
-        "840000000",
-        "650000000",
-        "266000000"
-      ],
-      "DefaultIndex": 0,
-      "ResetOnInit": true
-    },
-    {
       "Name": "GPUMinFreq",
-      "Path": "/sys/class/kgsl/kgsl-3d0/devfreq/min_freq",
+      "Path": "/sys/class/kgsl/kgsl-3d0/min_pwrlevel",
       "Values": [
-        "840000000",
-        "650000000",
-        "490000000",
-        "266000000"
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "Comments": [
+        "0 => 840000000",
+        "1 => 770000000",
+        "2 => 650000000",
+        "3 => 490000000",
+        "4 => 390000000",
+        "5 => 266000000"
       ],
       "ResetOnInit": true
     },
@@ -197,19 +196,81 @@
     },
     {
       "Name": "CPUBWMinFreq",
-      "Path": "/sys/class/devfreq/soc:qcom,cpu-cpu-ddr-bw/min_freq",
+      "Path": "/sys/devices/platform/soc/soc:qcom,cpu-cpu-ddr-bw/devfreq/soc:qcom,cpu-cpu-ddr-bw/min_freq",
       "Values": [
         "7980",
+        "6881",
+        "5931",
+        "5161",
         "3879",
+        "2929",
+        "2597",
+        "2086",
+        "1720",
+        "1144",
         "762"
       ],
       "ResetOnInit": true
+    },
+    {
+      "Name": "CPUDDRLatLittleClusterMinFreq",
+      "Path": "/sys/devices/platform/soc/soc:qcom,cpu0-cpu-ddr-lat/devfreq/soc:qcom,cpu0-cpu-ddr-lat/min_freq",
+      "Values": [
+        "7980",
+        "6881",
+        "5931",
+        "5161",
+        "3879",
+        "2929",
+        "2597",
+        "2086",
+        "1720",
+        "1144",
+        "762"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPUDDRLatBigClusterMinFreq",
+      "Path": "/sys/devices/platform/soc/soc:qcom,cpu6-cpu-ddr-lat/devfreq/soc:qcom,cpu6-cpu-ddr-lat/min_freq",
+      "Values": [
+        "7980",
+        "6881",
+        "5931",
+        "5161",
+        "3879",
+        "2929",
+        "2597",
+        "2086",
+        "1720",
+        "1144",
+        "762"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "PMQoSCpuDmaLatency",
+      "Path": "/dev/cpu_dma_latency",
+      "Values": [
+        "2c",
+        "100"
+      ],
+      "HoldFd": true
     },
     {
       "Name": "PowerHALMainState",
       "Path": "vendor.powerhal.state",
       "Values": [
         "SUSTAINED_PERFORMANCE",
+        ""
+      ],
+      "Type": "Property"
+    },
+    {
+      "Name": "PowerHALAudioState",
+      "Path": "vendor.powerhal.audio",
+      "Values": [
+        "AUDIO_STREAMING_LOW_LATENCY",
         ""
       ],
       "Type": "Property"
@@ -283,7 +344,13 @@
       "PowerHint": "INTERACTION",
       "Node": "CPUBWMinFreq",
       "Duration": 0,
-      "Value": "3879"
+      "Value": "6881"
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Node": "GPUMinFreq",
+      "Duration": 0,
+      "Value": "1"
     },
     {
       "PowerHint": "INTERACTIVE",
@@ -326,6 +393,12 @@
       "Node": "UclampTAMin",
       "Duration": 3000,
       "Value": "45"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "PMQoSCpuDmaLatency",
+      "Duration": 5000,
+      "Value": "2c"
     },
     {
       "PowerHint": "LAUNCH",
@@ -376,16 +449,46 @@
       "Value": "EXPENSIVE_RENDERING"
     },
     {
-      "PowerHint": "EXPENSIVE_RENDERING",
-      "Node": "GPUMinFreq",
+      "PowerHint": "LAUNCH",
+      "Node": "CPUDDRLatLittleClusterMinFreq",
+      "Duration": 5000,
+      "Value": "7980"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "CPUDDRLatBigClusterMinFreq",
+      "Duration": 5000,
+      "Value": "7980"
+    },
+    {
+      "PowerHint": "AUDIO_LAUNCH",
+      "Node": "PMQoSCpuDmaLatency",
       "Duration": 0,
-      "Value": "490000000"
+      "Value": "2c"
+    },
+    {
+      "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
+      "Node": "PowerHALAudioState",
+      "Duration": 0,
+      "Value": "AUDIO_STREAMING_LOW_LATENCY"
+    },
+    {
+      "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
+      "Node": "PMQoSCpuDmaLatency",
+      "Duration": 0,
+      "Value": "2c"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
-      "Node": "GPUMaxFreq",
+      "Node": "GPUMinFreq",
       "Duration": 0,
-      "Value": "650000000"
+      "Value": "0"
+    },
+    {
+      "PowerHint": "ML_ACC",
+      "Node": "PMQoSCpuDmaLatency",
+      "Duration": 2000,
+      "Value": "2c"
     },
     {
       "PowerHint": "Flipendo",

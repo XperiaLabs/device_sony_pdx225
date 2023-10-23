@@ -7,7 +7,11 @@ genfscon sysfs /devices/platform/soc/8300000.qcom,turing/wakeup u:object_r:sysfs
 genfscon sysfs /devices/platform/soc/984000.i2c/i2c-0/0-0028/wakeup u:object_r:sysfs_wakeup:s0
 
 # power
-genfscon sysfs /devices/platform/soc/5e00000.qcom,mdss_mdp u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/5e00000.qcom,mdss_mdp                                          u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/5900000.qcom,kgsl-3d0                                          u:object_r:vendor_sysfs_msm_subsys:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,cpu-cpu-ddr-bw                                        u:object_r:vendor_sysfs_msm_subsys:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,cpu0-cpu-ddr-lat                                      u:object_r:vendor_sysfs_msm_subsys:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,cpu6-cpu-ddr-lat                                      u:object_r:vendor_sysfs_msm_subsys:s0
 
 # Battery
 genfscon sysfs /class/battchg_ext u:object_r:sysfs_battchg_ext:s0
