@@ -141,6 +141,27 @@
       "ResetOnInit": true
     },
     {
+      "Name": "GPUMaxFreq",
+      "Path": "/sys/class/kgsl/kgsl-3d0/max_pwrlevel",
+      "Values": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "Comments": [
+        "0 => 840000000",
+        "1 => 770000000",
+        "2 => 650000000",
+        "3 => 490000000",
+        "4 => 390000000",
+        "5 => 266000000"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "GPUForceRailOn",
       "Path": "/sys/class/kgsl/kgsl-3d0/force_rail_on",
       "Values": [
@@ -308,7 +329,7 @@
       "PowerHint": "SUSTAINED_PERFORMANCE",
       "Node": "GPUMaxFreq",
       "Duration": 0,
-      "Value": "650000000"
+      "Value": "2"
     },
     {
       "PowerHint": "INTERACTION",
@@ -447,6 +468,18 @@
       "Node": "PowerHALRenderingState",
       "Duration": 0,
       "Value": "EXPENSIVE_RENDERING"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "GPUMinFreq",
+      "Duration": 0,
+      "Value": "3"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "GPUMaxFreq",
+      "Duration": 0,
+      "Value": "2"
     },
     {
       "PowerHint": "LAUNCH",
