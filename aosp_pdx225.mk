@@ -22,12 +22,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 IS_PHONE := true
-TARGET_USES_MINI_GAPPS := true
 
-PRODUCT_NAME := evolution_pdx225
+PRODUCT_NAME := aosp_pdx225
 PRODUCT_DEVICE := pdx225
 PRODUCT_MANUFACTURER := Sony
 PRODUCT_BRAND := Sony
