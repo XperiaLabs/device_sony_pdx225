@@ -28,7 +28,3 @@ allow hal_fingerprint_default vendor_sysfs_battery_supply:dir { search };
 allow hal_fingerprint_default tad_socket:sock_file write;
 
 allow hal_fingerprint_default tad:unix_stream_socket { connectto };
-
-# QTI Perf SEPolicy
-allow hal_fingerprint_default vendor_hal_perf_default:binder call;
-allow hal_fingerprint_default vendor_hal_perf_hwservice:hwservice_manager find;
