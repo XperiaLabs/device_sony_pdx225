@@ -470,12 +470,6 @@
       "Value": "7980"
     },
     {
-      "PowerHint": "EXPENSIVE_RENDERING",
-      "Node": "GPUMinFreq",
-      "Duration": 0,
-      "Value": "0"
-    },
-    {
       "PowerHint": "Flipendo",
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 0,
