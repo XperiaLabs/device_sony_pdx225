@@ -433,12 +433,8 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Power
-TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
-
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.sony-libperfmgr \
-    android.hardware.power@1.3.vendor \
-    libgrpc++_unsecure.vendor
+    android.hardware.power-service.sony-libperfmgr
 
 PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
