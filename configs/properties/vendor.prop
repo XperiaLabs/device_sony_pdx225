@@ -280,3 +280,4 @@ persist.log.tag.QC-time-services=S
 persist.log.tag.Tethering=S
 persist.log.tag.WindowManager=S
 persist.log.tag.ziparchive=S
+persist.log.tag.OpenGLRenderer=S
