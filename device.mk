@@ -138,10 +138,6 @@ PRODUCT_PACKAGES += \
     AntHalService-Soong \
     com.dsi.ant@1.0.vendor
 
-# Atrace
-PRODUCT_PACKAGES += \
-    android.hardware.atrace@1.0-service
-
 # Protobuf
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-3.9.1-vendorcompat
@@ -153,45 +149,44 @@ SOONG_CONFIG_android_hardware_audio += \
 SOONG_CONFIG_android_hardware_audio_run_64bit := true
 
 PRODUCT_PACKAGES += \
-    android.hardware.audio@6.0-impl \
-    android.hardware.audio.effect@6.0-impl \
-    android.hardware.audio.service \
-    android.hardware.bluetooth.audio@2.1-impl \
-    android.hardware.soundtrigger@2.3-impl \
-    tinyplay \
-    tinymix
+    android.hardware.audio@6.0-impl:64 \
+    android.hardware.audio.effect@6.0-impl:64 \
+    android.hardware.audio.service:64 \
+    android.hardware.bluetooth.audio@2.1-impl:64 \
+    android.hardware.soundtrigger@2.3-impl:64 \
+    tinyplay:64 \
+    tinymix:64
 
 PRODUCT_PACKAGES += \
-    audio.bluetooth.default \
-    audio.primary.holi \
-    audio.r_submix.default \
-    audio.usb.default \
-    sound_trigger.primary.holi
+    audio.bluetooth.default:64 \
+    audio.primary.holi:64 \
+    audio.r_submix.default:64 \
+    audio.usb.default:64 \
+    sound_trigger.primary.holi:64
 
 PRODUCT_PACKAGES += \
-    audioadsprpcd \
-    liba2dpoffload \
-    libaudiopreprocessing \
-    libbatterylistener \
-    libbundlewrapper \
-    libcirrusspkrprot \
-    libcomprcapture \
-    libdownmix \
-    libdynproc \
-    libeffectproxy \
-    libexthwplugin \
-    libhdmiedid \
-    libhfp \
-    libldnhncr \
-    libqcompostprocbundle \
-    libqcomvisualizer \
-    libqcomvoiceprocessing \
-    libreverbwrapper \
-    libsndmonitor \
-    libspkrprot \
-    libssrec \
-    libvisualizer \
-    libvolumelistener
+    audioadsprpcd:64 \
+    liba2dpoffload:64 \
+    libaudiopreprocessing:64 \
+    libbatterylistener:64 \
+    libbundlewrapper:64 \
+    libcomprcapture:64 \
+    libdownmix:64 \
+    libdynproc:64 \
+    libeffectproxy:64 \
+    libexthwplugin:64 \
+    libhdmiedid:64 \
+    libhfp:64 \
+    libldnhncr:64 \
+    libqcompostprocbundle:64 \
+    libqcomvisualizer:64 \
+    libqcomvoiceprocessing:64 \
+    libreverbwrapper:64 \
+    libsndmonitor:64 \
+    libspkrprot:64 \
+    libssrec:64 \
+    libvisualizer:64 \
+    libvolumelistener:64
 
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8350/audio
 
@@ -230,36 +225,36 @@ PRODUCT_COPY_FILES += \
 
 # Authsecret
 PRODUCT_PACKAGES += \
-    android.hardware.authsecret@1.0.vendor
+    android.hardware.authsecret@1.0.vendor:64
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0.vendor \
-    vendor.qti.hardware.bluetooth_audio@2.1.vendor \
-    vendor.qti.hardware.btconfigstore@1.0.vendor \
-    vendor.qti.hardware.btconfigstore@2.0.vendor
+    android.hardware.bluetooth@1.0.vendor:64 \
+    vendor.qti.hardware.bluetooth_audio@2.1.vendor:64 \
+    vendor.qti.hardware.btconfigstore@1.0.vendor:64 \
+    vendor.qti.hardware.btconfigstore@2.0.vendor:64
 
 # Boot control
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-impl-qti \
-    android.hardware.boot@1.2-impl-qti.recovery \
-    android.hardware.boot@1.2-service
+    android.hardware.boot@1.2-impl-qti:64 \
+    android.hardware.boot@1.2-impl-qti.recovery:64 \
+    android.hardware.boot@1.2-service:64
 
 PRODUCT_PACKAGES_DEBUG += \
-    bootctl
+    bootctl:64
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.common@1.0.vendor \
-    android.hardware.camera.device@3.5.vendor \
-    android.hardware.camera.provider@2.4-external \
-    android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-legacy \
+    android.hardware.camera.common@1.0.vendor:64 \
+    android.hardware.camera.device@3.5.vendor:64 \
+    android.hardware.camera.provider@2.4-external:64 \
+    android.hardware.camera.provider@2.4-impl:64 \
+    android.hardware.camera.provider@2.4-legacy:64 \
     android.hardware.camera.provider@2.5-legacy:64 \
-    android.hardware.camera.provider@2.6.vendor \
-    vendor.qti.hardware.camera.device@1.0.vendor \
-    vendor.qti.hardware.camera.postproc@1.0.vendor \
-    libgui_vendor
+    android.hardware.camera.provider@2.6.vendor:64 \
+    vendor.qti.hardware.camera.device@1.0.vendor:64 \
+    vendor.qti.hardware.camera.postproc@1.0.vendor:64 \
+    libgui_vendor:64
 
 # Common init scripts
 PRODUCT_PACKAGES += \
@@ -281,56 +276,56 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.mapper@3.0-impl-qti-display \
-    android.hardware.graphics.mapper@4.0-impl-qti-display \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
-    init.qti.display_boot.sh \
-    libdisplayconfig.qti \
-    libdisplayconfig.qti \
-    libdisplayconfig.system.qti \
-    libmemutils \
-    libqdMetaData \
-    libqdMetaData.system \
-    libsdedrm \
-    libsdmcore \
-    libsdmutils \
-    libtinyxml \
-    memtrack.default \
-    vendor.display.config@1.15.vendor \
-    vendor.display.config@1.5 \
-    vendor.display.config@2.0 \
-    vendor.display.config@2.0.vendor \
-    vendor.qti.hardware.display.allocator-service \
-    vendor.qti.hardware.display.composer-service \
-    vendor.qti.hardware.display.mapper@1.0.vendor \
-    vendor.qti.hardware.display.mapper@1.1.vendor \
-    vendor.qti.hardware.display.mapper@2.0.vendor \
-    vendor.qti.hardware.display.mapper@3.0.vendor \
-    vendor.qti.hardware.display.mapper@4.0.vendor
+    android.hardware.graphics.mapper@3.0-impl-qti-display:64 \
+    android.hardware.graphics.mapper@4.0-impl-qti-display:64 \
+    android.hardware.memtrack@1.0-impl:64 \
+    android.hardware.memtrack@1.0-service:64 \
+    init.qti.display_boot.sh:64 \
+    libdisplayconfig.qti:64 \
+    libdisplayconfig.qti:64 \
+    libdisplayconfig.system.qti:64 \
+    libmemutils:64 \
+    libqdMetaData:64 \
+    libqdMetaData.system:64 \
+    libsdedrm:64 \
+    libsdmcore:64 \
+    libsdmutils:64 \
+    libtinyxml:64 \
+    memtrack.default:64 \
+    vendor.display.config@1.15.vendor:64 \
+    vendor.display.config@1.5:64 \
+    vendor.display.config@2.0:64 \
+    vendor.display.config@2.0.vendor:64 \
+    vendor.qti.hardware.display.allocator-service:64 \
+    vendor.qti.hardware.display.composer-service:64 \
+    vendor.qti.hardware.display.mapper@1.0.vendor:64 \
+    vendor.qti.hardware.display.mapper@1.1.vendor:64 \
+    vendor.qti.hardware.display.mapper@2.0.vendor:64 \
+    vendor.qti.hardware.display.mapper@3.0.vendor:64 \
+    vendor.qti.hardware.display.mapper@4.0.vendor:64
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.3.vendor \
-    android.hardware.drm-service.clearkey
+    android.hardware.drm@1.3.vendor:64 \
+    android.hardware.drm-service.clearkey:64
 
 # fastbootd
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.1-impl.custom \
+    android.hardware.fastboot@1.1-impl.custom:64 \
     fastbootd
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1.vendor
+    android.hardware.biometrics.fingerprint@2.1.vendor:64
 
 PRODUCT_PACKAGES += \
-    android.hardware.gnss.measurement_corrections@1.1.vendor \
-    android.hardware.gnss.visibility_control@1.0.vendor \
-    android.hardware.gnss@2.1.vendor
+    android.hardware.gnss.measurement_corrections@1.1.vendor:64 \
+    android.hardware.gnss.visibility_control@1.0.vendor:64 \
+    android.hardware.gnss@2.1.vendor:64
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0.vendor
+    android.hardware.gatekeeper@1.0.vendor:64
 
 # Health
 PRODUCT_PACKAGES += \
