@@ -287,6 +287,7 @@ PRODUCT_PACKAGES += \
     libmemutils \
     libqdMetaData \
     libqdMetaData.system \
+    libsdedrm \
     libsdmcore \
     libsdmutils \
     libtinyxml \
@@ -378,8 +379,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libavservices_minijail \
     libavservices_minijail.vendor \
-    libavservices_minijail_vendor \
-    libcodec2_hidl@1.0.vendor
+    libavservices_minijail_vendor
 
 # Media (Device)
 PRODUCT_COPY_FILES += \
@@ -389,10 +389,6 @@ PRODUCT_COPY_FILES += \
 # PRODUCT_PACKAGES += \
     android.hardware.lights-service.qti \
     lights.sony
-
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.1-service.sony
 
 # Net
 PRODUCT_PACKAGES += \
@@ -419,16 +415,13 @@ PRODUCT_COPY_FILES += \
 
 # OMX
 PRODUCT_PACKAGES += \
-    android.hardware.media.omx@1.0-impl \
-    android.hardware.media.omx@1.0-service \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
     libOmxEvrcEnc \
     libOmxG711Enc \
     libOmxQcelp13Enc \
-    libstagefrighthw \
-    libstagefright_omx.vendor
+    libstagefrighthw
 
 # Power
 PRODUCT_PACKAGES += \
