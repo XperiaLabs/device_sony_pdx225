@@ -24,19 +24,10 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/pb/config/common.mk)
 
-IS_PHONE := true
-
 PRODUCT_NAME := aosp_pdx225
 PRODUCT_DEVICE := pdx225
 PRODUCT_MANUFACTURER := Sony
 PRODUCT_BRAND := Sony
 PRODUCT_MODEL := Xperia 10 IV
 
-WITH_GMS := true
-
 PRODUCT_GMS_CLIENTID_BASE := android-sonymobile
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="XQ-CC72-user 13 65.1.A.5.88 065001A005008801489908807 release-keys"
-
-BUILD_FINGERPRINT := Sony/XQ-CC72/XQ-CC72:13/65.1.A.5.88/065001A005008801489908807:user/release-keys

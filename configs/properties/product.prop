@@ -3,7 +3,7 @@ ro.config.media_vol_steps=30
 ro.config.vc_call_vol_steps=8
 
 # Device Mask
-ro.build.fingerprint=google/redfin/redfin:13/TQ3A.230705.001/10216780:user/release-keys
+ro.build.fingerprint=google/redfin/redfin:14/UP1A.231005.007/10754064:user/release-keys
 ro.product.brand=google
 ro.product.device=redfin
 ro.product.manufacturer=Google
