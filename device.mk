@@ -151,18 +151,18 @@ SOONG_CONFIG_android_hardware_audio_run_64bit := true
 PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl:64 \
     android.hardware.audio.effect@6.0-impl:64 \
-    android.hardware.audio.service:64 \
-    android.hardware.bluetooth.audio@2.1-impl:64 \
-    android.hardware.soundtrigger@2.3-impl:64 \
+    android.hardware.audio.service \
+    android.hardware.bluetooth.audio@2.1-impl \
+    android.hardware.soundtrigger@2.3-impl \
     tinyplay:64 \
     tinymix:64
 
 PRODUCT_PACKAGES += \
-    audio.bluetooth.default:64 \
+    audio.bluetooth.default \
     audio.primary.holi:64 \
     audio.r_submix.default:64 \
     audio.usb.default:64 \
-    sound_trigger.primary.holi:64
+    sound_trigger.primary.holi
 
 PRODUCT_PACKAGES += \
     audioadsprpcd:64 \
@@ -281,8 +281,8 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl:64 \
     android.hardware.memtrack@1.0-service:64 \
     init.qti.display_boot.sh:64 \
-    libdisplayconfig.qti:64 \
-    libdisplayconfig.qti:64 \
+    libdisplayconfig.qti \
+    libdisplayconfig.qti \
     libdisplayconfig.system.qti:64 \
     libmemutils:64 \
     libqdMetaData:64 \
@@ -292,10 +292,10 @@ PRODUCT_PACKAGES += \
     libsdmutils:64 \
     libtinyxml:64 \
     memtrack.default:64 \
-    vendor.display.config@1.15.vendor:64 \
+    vendor.display.config@1.15.vendor \
     vendor.display.config@1.5:64 \
     vendor.display.config@2.0:64 \
-    vendor.display.config@2.0.vendor:64 \
+    vendor.display.config@2.0.vendor \
     vendor.qti.hardware.display.allocator-service:64 \
     vendor.qti.hardware.display.composer-service:64 \
     vendor.qti.hardware.display.mapper@1.0.vendor:64 \
