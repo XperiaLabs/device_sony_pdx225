@@ -136,11 +136,11 @@ PRODUCT_PACKAGES += \
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService-Soong \
-    com.dsi.ant@1.0.vendor
+    com.dsi.ant@1.0.vendor:64
 
 # Protobuf
 PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-3.9.1-vendorcompat
+    libprotobuf-cpp-full-3.9.1-vendorcompat:64
 
 # Audio
 SOONG_CONFIG_NAMESPACES += android_hardware_audio
@@ -241,7 +241,7 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-service:64
 
 PRODUCT_PACKAGES_DEBUG += \
-    bootctl:64
+    bootctl
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -276,8 +276,8 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.mapper@3.0-impl-qti-display:64 \
-    android.hardware.graphics.mapper@4.0-impl-qti-display:64 \
+    android.hardware.graphics.mapper@3.0-impl-qti-display \
+    android.hardware.graphics.mapper@4.0-impl-qti-display \
     android.hardware.memtrack@1.0-impl:64 \
     android.hardware.memtrack@1.0-service:64 \
     init.qti.display_boot.sh:64 \
@@ -311,7 +311,7 @@ PRODUCT_PACKAGES += \
 
 # fastbootd
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.1-impl.custom:64 \
+    android.hardware.fastboot@1.1-impl.custom \
     fastbootd
 
 # Fingerprint
@@ -329,10 +329,10 @@ PRODUCT_PACKAGES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health-service.sony \
-    android.hardware.health-service.sony_recovery \
-    android.hardware.health@1.0.vendor \
-    android.hardware.health@2.1.vendor
+    android.hardware.health-service.sony:64 \
+    android.hardware.health-service.sony_recovery:64 \
+    android.hardware.health@1.0.vendor:64 \
+    android.hardware.health@2.1.vendor:64
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -355,14 +355,14 @@ PRODUCT_COPY_FILES += \
 
 #  IPACM
 PRODUCT_PACKAGES += \
-    ipacm \
-    IPACM_cfg.xml \
-    libipanat \
-    liboffloadhal
+    ipacm:64 \
+    IPACM_cfg.xml:64 \
+    libipanat:64 \
+    liboffloadhal:64
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1.vendor
+    android.hardware.keymaster@4.1.vendor:64
 
 # KProfiles
 PRODUCT_PACKAGES += \
@@ -399,20 +399,20 @@ PRODUCT_PACKAGES += \
 
 # Net
 PRODUCT_PACKAGES += \
-    android.system.net.netd@1.1.vendor \
-    netutils-wrapper-1.0
+    android.system.net.netd@1.1.vendor:64 \
+    netutils-wrapper-1.0:64
 
 # Neural networks
 PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks@1.3.vendor
+    android.hardware.neuralnetworks@1.3.vendor:64
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc-service.nxp \
-    android.hardware.secure_element@1.2.vendor \
-    com.android.nfc_extras \
-    Tag \
-    NfcNci
+    android.hardware.nfc-service.nxp:64 \
+    android.hardware.secure_element@1.2.vendor:64 \
+    com.android.nfc_extras:64 \
+    Tag:64 \
+    NfcNci:64
 
 # NFC
 PRODUCT_COPY_FILES += \
@@ -435,7 +435,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.sony-libperfmgr
+    android.hardware.power-service.sony-libperfmgr:64
 
 PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
@@ -446,22 +446,22 @@ PRODUCT_COPY_FILES += \
 
 # QMI
 PRODUCT_PACKAGES += \
-    libjson \
-    libqti_vndfwk_detect \
-    libqti_vndfwk_detect.vendor \
-    libvndfwk_detect_jni.qti \
-    libvndfwk_detect_jni.qti.vendor
+    libjson:64 \
+    libqti_vndfwk_detect:64 \
+    libqti_vndfwk_detect.vendor:64 \
+    libvndfwk_detect_jni.qti:64 \
+    libvndfwk_detect_jni.qti.vendor:64
 
 # RIL
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.5.vendor \
-    android.hardware.radio.config@1.2.vendor \
-    android.hardware.radio.deprecated@1.0.vendor \
-    libprotobuf-cpp-full \
-    librmnetctl \
-    libxml2 \
-    extphonelib \
-    extphonelib.xml
+    android.hardware.radio@1.5.vendor:64 \
+    android.hardware.radio.config@1.2.vendor:64 \
+    android.hardware.radio.deprecated@1.0.vendor:64 \
+    libprotobuf-cpp-full:64 \
+    librmnetctl:64 \
+    libxml2:64 \
+    extphonelib:64 \
+    extphonelib.xml:64
 
 # RIL (eUICC)
 PRODUCT_COPY_FILES += \
@@ -470,8 +470,8 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors-service.multihal \
-    libsensorndkbridge
+    android.hardware.sensors-service.multihal:64 \
+    libsensorndkbridge:64
 
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
@@ -480,9 +480,9 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Sony Display interface
 PRODUCT_PACKAGES += \
-    vendor.semc.hardware.display@2.0.vendor \
-    vendor.semc.hardware.display@2.1.vendor \
-    vendor.semc.hardware.display@2.2.vendor
+    vendor.semc.hardware.display@2.0.vendor:64 \
+    vendor.semc.hardware.display@2.1.vendor:64 \
+    vendor.semc.hardware.display@2.2.vendor:64
 
 # Set fdsan to the warn_once severity level
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -490,19 +490,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Shim
 PRODUCT_PACKAGES += \
-    android.hardware.light-V1-ndk_platform.vendor \
-    android.hidl.base@1.0.vendor
+    android.hardware.light-V1-ndk_platform.vendor:64 \
+    android.hidl.base@1.0.vendor:64
 
 # Telephony
 PRODUCT_PACKAGES += \
-    SonyEuicc \
-    ims-ext-common \
-    ims_ext_common.xml \
-    qti-telephony-hidl-wrapper \
-    qti_telephony_hidl_wrapper.xml \
-    qti-telephony-utils \
-    qti_telephony_utils.xml \
-    telephony-ext
+    SonyEuicc:64 \
+    ims-ext-common:64 \
+    ims_ext_common.xml:64 \
+    qti-telephony-hidl-wrapper:64 \
+    qti_telephony_hidl_wrapper.xml:64 \
+    qti-telephony-utils:64 \
+    qti_telephony_utils.xml:64 \
+    telephony-ext:64
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
@@ -539,35 +539,35 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.3-service-qti
+    android.hardware.usb@1.3-service-qti:64
 
 # Vendor libstdc++
 PRODUCT_PACKAGES += \
-    libstdc++.vendor
+    libstdc++.vendor:64
 
 # Vendor service manager
 PRODUCT_PACKAGES += \
-    vndservicemanager
+    vndservicemanager:64
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.vibrator-service.sony
+    vendor.qti.hardware.vibrator-service.sony:64
 
 # QTI service tracker
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.servicetracker@1.0.vendor \
-    vendor.qti.hardware.servicetracker@1.1.vendor \
-    vendor.qti.hardware.servicetracker@1.2.vendor
+    vendor.qti.hardware.servicetracker@1.0.vendor:64 \
+    vendor.qti.hardware.servicetracker@1.1.vendor:64 \
+    vendor.qti.hardware.servicetracker@1.2.vendor:64
 
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
     hostapd \
-    libwpa_client \
-    libwifi-hal-ctrl \
-    libwifi-hal-qcom \
-    vendor.qti.hardware.wifi.hostapd@1.2.vendor \
-    vendor.qti.hardware.wifi.supplicant@2.1.vendor \
+    libwpa_client:64 \
+    libwifi-hal-ctrl:64 \
+    libwifi-hal-qcom:64 \
+    vendor.qti.hardware.wifi.hostapd@1.2.vendor:64 \
+    vendor.qti.hardware.wifi.supplicant@2.1.vendor:64 \
     WifiResCommon \
     wpa_supplicant \
     wpa_supplicant.conf
