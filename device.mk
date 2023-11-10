@@ -419,16 +419,13 @@ PRODUCT_COPY_FILES += \
 
 # OMX
 PRODUCT_PACKAGES += \
-    android.hardware.media.omx@1.0-impl \
-    android.hardware.media.omx@1.0-service \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
     libOmxEvrcEnc \
     libOmxG711Enc \
     libOmxQcelp13Enc \
-    libstagefrighthw \
-    libstagefright_omx.vendor
+    libstagefrighthw
 
 # Power
 PRODUCT_PACKAGES += \
