@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_pdx225.mk
+    $(LOCAL_DIR)/lineage_pdx225.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_pdx225-user \
-    aosp_pdx225-userdebug \
-    aosp_pdx225-eng
+    lineage_pdx225-user \
+    lineage_pdx225-userdebug \
+    lineage_pdx225-eng
