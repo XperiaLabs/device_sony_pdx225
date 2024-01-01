@@ -497,7 +497,6 @@ PRODUCT_PACKAGES += \
 
 # Telephony
 PRODUCT_PACKAGES += \
-    SonyEuicc \
     ims-ext-common \
     ims_ext_common.xml \
     qti-telephony-hidl-wrapper \
@@ -574,12 +573,27 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
+# Xperia Modules | Xperia Extras
+include hardware/sony/XperiaModules.mk
+include vendor/sony/extra/Murray/extra.mk
+
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
 
-# XperiaParts
-PRODUCT_PACKAGES += \
-    XperiaParts
+# Xperia Modules - Flags
+TARGET_SUPPORTS_CREATOR_MODE := true
+TARGET_SUPPORTS_HIGH_REFRESH_RATE := false
+TARGET_SUPPORTS_BATTERY_CARE := true
+TARGET_SUPPORTS_EUICC := true
+
+# Xperia Extras - Flags
+TARGET_SHIPS_SONY_FRAMEWORK := true
+TARGET_SHIPS_SONY_APPS := true
+TARGET_SUPPORTS_GAME_CONTROLLERS := true
+
+# Xperia Modules | Xperia Extras - Shared Flags (hardware_sony & vendor_sony_extra)
+TARGET_SUPPORTS_SOUND_ENHANCEMENT := true
+TARGET_SHIPS_SOUND_ENHANCEMENT := true
 
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
